@@ -62,7 +62,8 @@
                         <div class="col-md-6 mb-3">
                             <label for="firstName" class="form-label">First Name</label>
                             <input class="form-control @error('firstName') is-invalid @enderror" type="text"
-                                name="firstName" id="firstName" value="{{ old('firstName') }}" placeholder="Enter First Name">
+                                name="firstName" id="firstName" value="{{ old('firstName') }}"
+                                placeholder="Enter First Name">
                             @error('firstName')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
@@ -72,7 +73,8 @@
                         <div class="col-md-6 mb-3">
                             <label for="lastName" class="form-label">Last Name</label>
                             <input class="form-control @error('lastName') is-invalid @enderror" type="text"
-                                name="lastName" id="lastName" value="{{ old('lastName') }}" placeholder="Enter Last Name">
+                                name="lastName" id="lastName" value="{{ old('lastName') }}"
+                                placeholder="Enter Last Name">
                             @error('lastName')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
@@ -97,6 +99,20 @@
                                 <div class="text-danger mt-1">
                                     {{ $message }}
                                 </div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="position" class="form-label">Position</label>
+                            <select name="position" id="position" class="form-select">
+                                @foreach ($positions as $position)
+                                    <option value="{{ $position->id }}"
+                                        {{ old('position') == $position->id ? 'selected' : '' }}>
+                                        {{ $position->code . ' - ' . $position->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('position')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
                     </div>
