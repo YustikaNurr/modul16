@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    {{-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <a href="{{ route('home') }}" class="navbar-brand mb-0 h1"><i class="bi-hexagon-fill me-2"></i> Data
                 Master</a>
@@ -35,7 +35,7 @@
                         class="bi-person-circle me-1"></i> My Profile</a>
             </div>
         </div>
-    </nav>
+    </nav> --}}
 
     @extends('layouts.app')
 

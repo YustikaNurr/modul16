@@ -212,7 +212,7 @@ class EmployeeController extends Controller
 
         // ELOQUENT
         $employee = Employee::find($id);
-        $employee->firstname = $request->firstName;
+        $employee->firstname = $request->firstName; //memasukkan nilai dari item form dengan nama "firstName" ke kolom dengan nama "firstname"
         $employee->lastname = $request->lastName;
         $employee->email = $request->email;
         $employee->age = $request->age;
